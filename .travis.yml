@@ -1,0 +1,4 @@
+# inspired by: https://github.com/joymon/travis-ci-test
+language: node_js
+node_js:
+- "stable"
