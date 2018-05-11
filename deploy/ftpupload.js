@@ -1,54 +1,19 @@
-var fs = require('fs');
-var FtpClient = require('ftp-deploy');
+var FtpDeploy = require('ftp-deploy');
+var ftpDeploy = new FtpDeploy();
 
-console.log("Inside ftpUpload.js");
-if (process === null) {
-    console.log("process is null");
-}
-else {
-    uploadToFTP();
-}
-function getFiles(dir, files_) {
-    files_ = files_ || [];
-    var files = fs.readdirSync(dir);
-    for (var i in files) {
-        var name = dir + '/' + files[i];
-        if (fs.statSync(name).isDirectory()) {
-            getFiles(name, files_);
-        } else {
-            files_.push({ full_path: name, rel_path: files[i] });
-        }
-    }
-    return files_;
+var config = {
+    user: process.env.ftp_user,  // NOTE that this was username in 1.x
+    password: process.env.ftp_password, // optional, prompted if none given
+    host: process.env.ftp_host,
+    port: 21,
+    localRoot: process.env.ftp_localPath,
+    remoteRoot: process.env.ftp_remotePath,
+    include: ['*', '**/*'],  // upload everything except dot files
+    exclude: []
 }
 
-function uploadToFTP(files) {
-    var ftp = new FtpClient();
-    var ftpConfig = getConfiguration();
+// use with promises
+ftpDeploy.deploy(config)
+    .then(res => console.log('finished'))
+    .catch(err => console.log(err))
 
-    console.log("ftp.host =" + ftpConfig.host);
-    console.log("ftp.username =" + ftpConfig.username);
-    console.log("ftp.password length =" + ftpConfig.password.length);
-    console.log("ftp.localRoot =" + ftpConfig.localRoot);
-    console.log("ftp.remoteRoot =" + ftpConfig.remoteRoot);
-    console.log("ftp.port =" + ftpConfig.port);
-
-    ftp.deploy(ftpConfig, function (err, fileName) {
-        if (err) {
-            console.log("error " + err);
-        }
-        else {
-            console.log("Completed uploading");
-        }
-    });
-}
-function getConfiguration() {
-    return {
-        host: process.env.ftp_host,
-        port: 21,
-        username: process.env.ftp_user,
-        password: process.env.ftp_password,
-        localRoot: process.env.ftp_localPath,
-        remoteRoot: process.env.ftp_remotePath
-    };
-}
