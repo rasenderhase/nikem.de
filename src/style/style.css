@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0 auto;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    color: hsl(0, 0%, 90%);
+}
+
+a {
+    color: hsl(0, 0%, 90%);
+}
+
+html, body {
+    height: 100%;
+}
+
+/* navigation bar *****************************************************************************************************/
+.navigation {
+    background-color: hsl(240, 100%, 20%);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+/*    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12); */
+}
+
+/* menu bar */
+.navigation ul {
+    max-width: 1012px;
+    margin: 0 auto;
+    padding-left: 0;
+}
+
+/* menu items */
+@media (min-width: 600px) {
+    .navigation li {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigation li {
+        display: none;
+    }
+
+    #toggle:checked ~ ul li {
+        display: block;
+    }
+}
+
+.navigation a, .navigation label {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.navigation a:hover, .navigation label:hover, .navigation li:hover {
+    background-color: hsl(240, 70%, 40%);
+}
+
+/* menu icon */
+@media (min-width: 600px) {
+    #toggle + label {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    #toggle + label {
+        display: block;
+        color: hsl(60, 95%, 75%);
+    }
+}
+
+#toggle:checked + label {
+    color: hsl(60, 82%, 62%);
+}
+
+/* menu icon checkbox */
+#toggle {
+    display: none;
+}
+
+/* page ***************************************************************************************************************/
+
+.page {
+    position: relative;
+    top: calc(1.4em + 10px);
+    height: calc(100% - 1.4em - 10px);
+}
+
+.banner {
+    background-image: url("../img/hero.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner .hero {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (min-width: 600px) {
+    .banner .hero {
+        width: 600px;
+    }
+}
+
+.section {
+    min-height: 100%;
+}
