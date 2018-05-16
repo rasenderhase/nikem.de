@@ -114,13 +114,13 @@ html, body {
     margin: 0 auto;
     text-align: center;
     color: white;
-    background-color: hsla(0, 0%, 0%, 0.6);
+    background-color: transparent;
 }
 
 @media (min-width: 600px) {
     .banner .hero {
         width: 600px;
-        background-color: transparent;
+        background-color: hsla(0, 0%, 0%, 0.6);
     }
 }
 
