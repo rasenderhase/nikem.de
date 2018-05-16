@@ -19,6 +19,10 @@ html, body {
     height: 100%;
 }
 
+.section {
+    min-height: 100%;
+}
+
 /* navigation bar *****************************************************************************************************/
 .navigation {
     background-color: hsl(240, 100%, 20%);
@@ -59,7 +63,7 @@ html, body {
     padding: 5px;
 }
 
-.navigation a:hover, .navigation label:hover, .navigation li:hover {
+.navigation a:hover, .navigation li:hover {
     background-color: hsl(240, 70%, 40%);
 }
 
@@ -96,6 +100,8 @@ html, body {
     height: calc(100% - 1.4em - 10px);
 }
 
+/* banner *************************************************************************************************************/
+
 .banner {
     background-image: url("../img/hero.jpg");
     display: flex;
@@ -107,15 +113,23 @@ html, body {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-    background-color: hsla(0, 0%, 0%, 60%);
+    color: white;
+    background-color: hsla(0, 0%, 0%, 0.6);
 }
 
 @media (min-width: 600px) {
     .banner .hero {
         width: 600px;
+        background-color: transparent;
     }
 }
 
-.section {
-    min-height: 100%;
+.section-impressum {
+    background-image: url("../img/favicon.svg");
+    background-blend-mode: hue;
+    background-color: hsl(60, 82%, 95%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+
 }
