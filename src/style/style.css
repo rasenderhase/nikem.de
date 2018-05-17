@@ -9,7 +9,6 @@ body {
     background-image: -webkit-linear-gradient(top, hsla(0,0%,0%,0.5), hsla(0,0%,0%,0.5)), url("../img/pull-1.jpg");
     background-image: -ms-linear-gradient(top, hsla(0,0%,0%,0.5), hsla(0,0%,0%,0.5)), url("../img/pull-1.jpg");
     background-image: linear-gradient(top, hsla(0,0%,0%,0.5), hsla(0,0%,0%,0.5)), url("../img/pull-1.jpg");
-    background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,6 +18,13 @@ body {
     font-size: 24px;
     font-weight: 300;
     color: hsl(0, 0%, 90%);
+}
+
+/* mobile browsers don't support background-attachment: fixed; */
+@media (min-width: 600px) {
+    body {
+        background-attachment: fixed;
+    }
 }
 
 a {
@@ -37,7 +43,7 @@ html, body {
 h2 {
     text-transform: uppercase;
     border-bottom: 1px solid;
-    font-size: 31px;
+    font-size: 28px;
     display: inline-block;
     padding-top: 75px;
 }
@@ -227,19 +233,35 @@ p {
 /* impressum **********************************************************************************************************/
 
 .section-impressum {
-    background-image: -moz-linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
-    background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
-    background-image: -ms-linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
-    background-image: linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
-    background-attachment: fixed;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: hsl(60, 82%, 95%);
     color: hsl(0, 0%, 20%);
+}
+
+@media (min-width: 600px) {
+    .section-impressum {
+        background-image: -moz-linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
+        background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
+        background-image: -ms-linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
+        background-image: linear-gradient(top, hsla(0,0%,100%,0.95), hsla(0,0%,100%,0.85)), url("../img/favicon.svg");
+        background-attachment: fixed;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 
 .section-impressum a {
     color: hsl(0, 0%, 20%);
+}
+
+.section-datenschutz {
+    background-color: hsla(0, 0%, 20%, 0.9);
+}
+
+@media (min-width: 600px) {
+    .section-datenschutz {
+        background-color: unset;
+    }
 }
 
 /* footer *************************************************************************************************************/
