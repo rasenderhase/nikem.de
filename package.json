@@ -5,6 +5,6 @@
     "posttest": "node deploy/ftpupload.js"
   },
   "devDependencies": {
-    "ftp-deploy": "^2.0.4"
+    "ftp-deploy": "^2.3.0"
   }
 }
