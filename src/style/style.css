@@ -5,10 +5,10 @@
 }
 
 body {
-    background-image: -moz-linear-gradient(top, hsla(0,0%,0%,0.5), hsla(0,0%,0%,0.5)), url("../img/pull-1.jpg");
-    background-image: -webkit-linear-gradient(top, hsla(0,0%,0%,0.5), hsla(0,0%,0%,0.5)), url("../img/pull-1.jpg");
-    background-image: -ms-linear-gradient(top, hsla(0,0%,0%,0.5), hsla(0,0%,0%,0.5)), url("../img/pull-1.jpg");
-    background-image: linear-gradient(top, hsla(0,0%,0%,0.5), hsla(0,0%,0%,0.5)), url("../img/pull-1.jpg");
+    background-image: -moz-linear-gradient(top, hsla(0,0%,0%,0.1), hsla(0,0%,0%,0.9)), url("../img/pull-1.jpg");
+    background-image: -webkit-linear-gradient(top, hsla(0,0%,0%,0.1), hsla(0,0%,0%,0.9)), url("../img/pull-1.jpg");
+    background-image: -ms-linear-gradient(top, hsla(0,0%,0%,0.1), hsla(0,0%,0%,0.9)), url("../img/pull-1.jpg");
+    background-image: linear-gradient(top, hsla(0,0%,0%,0.1), hsla(0,0%,0%,0.9)), url("../img/pull-1.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,7 +54,7 @@ p {
 
 /* navigation bar *****************************************************************************************************/
 .navigation {
-    background-color: rgb(69, 83, 96);
+    background-color: rgb(126, 114, 82);
     width: 100%;
     position: fixed;
     top: 0;
