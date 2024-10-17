@@ -21,4 +21,4 @@ jobs:
 
     - name: Upload files via SFTP
       run: |
-        scp -r ./src/* deploy_web@www.cloud-1.nikem.de:/var/www/nikem.de/test-html
+        scp -r ./src/* deploy_web@www.cloud-1.nikem.eu:/var/www/nikem.de/test-html
