@@ -1,8 +1,0 @@
-{
-  "name": "nikem.de",
-  "version": "0.0.1",
-  "scripts": {},
-  "devDependencies": {
-    "ftp-deploy": "^2.3.0"
-  }
-}
